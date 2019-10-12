@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.view.GestureDetector;
+import android.view.Gravity;
 import android.view.InputDevice;
 import android.view.InputEvent;
 import android.view.KeyCharacterMap;
@@ -34,7 +35,8 @@ public class MainActivity extends Activity implements OnKeyListener {
         if (prevToast != null) {
             prevToast.cancel();
         }
-        Toast toast = Toast.makeText(MainActivity.this, text, Toast.LENGTH_SHORT);
+        Toast toast = Toast.makeText(MainActivity.this, text, Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
         prevToast = toast;
     }
