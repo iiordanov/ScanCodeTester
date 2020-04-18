@@ -142,7 +142,9 @@ public class MainActivity extends Activity implements OnKeyListener {
 
 	@Override
 	public boolean onKey(View arg0, int arg1, KeyEvent event) {
-	    showToast(event.toString() + "\nSource: " + event.getSource() + "\nCharacters: " + event.getCharacters());
+	    showToast(event.toString() + "\nSource: " + event.getSource() +
+                  "\nCharacters: " + event.getCharacters() +
+                  "\nUnicode character: 0x" + Integer.toHexString(event.getUnicodeChar()));
 		android.util.Log.e("MainActivity", event.toString());
         refreshTextView();
 		return true;
